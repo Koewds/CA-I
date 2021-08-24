@@ -53,5 +53,4 @@ juegaAlFutbol n | n == 7 || n == 14 || n == 21 || n == 28 || n == 5 || n == 12 |
                 | otherwise = False
 
 digitoPreciso :: Int -> Int -> Int
-digitoPreciso n 1 = mod n 10
 digitoPreciso n k = (div (mod n (10^k)) (10^(k-1)))
