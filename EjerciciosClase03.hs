@@ -2,7 +2,6 @@
 multiplo3 :: Int -> Bool
 multiplo3 n | n == 0 = True
             | n < 3  = False
-            | n == 3 = True
             | otherwise = multiplo3 (n - 3)
 
 
