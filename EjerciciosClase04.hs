@@ -30,3 +30,19 @@ g3 0 = 0
 g3 1 = 2
 g3 n | mod n 2 == 0 = g3 (n-2) + 2^(n-1)
      | otherwise = g3 (n-2) + 2^n
+
+
+-----------
+
+--Auxiliares g4
+
+--equalDigits
+equalDigits :: Int -> Bool
+equalDigits n | n < 10 = True
+              | otherwise = mod n 10 == mod (div n 10) 10 && equalDigits (div n 10)
+
+
+g4 :: Int -> Int
+g4 0 = 0
+g4 n | equalDigits n == True = g4 (n-1) + n
+     | otherwise = g4 (n-1)
